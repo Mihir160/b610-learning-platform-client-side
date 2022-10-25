@@ -49,11 +49,11 @@ const Navbar = () => {
                             </div>
                         </li>
                     </ul>
-                    <ul class="flex items-center  space-x-8 lg:flex">
+                    <ul class="flex hidden items-center  space-x-8 lg:flex">
                         <li>
                             <Link
-                                to="/"
-                                class="inline-flex hidden items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                                to="/login"
+                                class="inline-flex  items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                                 aria-label="Sign up"
                                 title="Sign up"
                             >
@@ -89,7 +89,7 @@ const Navbar = () => {
                                     <div class="flex items-center justify-between mb-4">
                                         <div>
                                             <Link
-                                                to="/home"
+                                                to="/"
                                                
                                                 class="inline-flex items-center"
                                             >
@@ -147,19 +147,17 @@ const Navbar = () => {
                                             
                                             <li>
                                                 <Link
-                                                    to="/"
+                                                    to="/login"
                                                     class="inline-flex items-center justify-center bg-slate-800  h-10 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline outline-none"
-                                                    aria-label="Sign up"
-                                                    title="Sign up"
                                                 >
                                                     Login
                                                 </Link>
                                             </li>
                                             <li>
                                                 <div className="form-control ">
-                                                    <label className="label cursor-pointer">
+                                                    <label className="label">
 
-                                                        <input type="checkbox" className="toggle" />
+                                                        <input type="checkbox" className="toggle cursor-pointer" />
                                                     </label>
                                                 </div>
                                             </li>
