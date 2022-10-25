@@ -18,7 +18,7 @@ const Navbar = () => {
                     </Link>
                     <ul class="flex items-center hidden space-x-8 lg:flex">
                         <li>
-                            <Link to="/" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400" >
+                            <Link to="/courses" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400" >
                                 Courses
                             </Link>
                         </li>
@@ -49,7 +49,7 @@ const Navbar = () => {
                             </div>
                         </li>
                     </ul>
-                    <ul class="flex items-center hidden space-x-8 lg:flex">
+                    <ul class="flex items-center  space-x-8 lg:flex">
                         <li>
                             <Link
                                 to="/"
@@ -85,7 +85,7 @@ const Navbar = () => {
                         </button>
                         {isMenuOpen && (
                             <div class="absolute top-0 left-0  w-full">
-                                <div class="p-5 bg-white border rounded shadow-sm">
+                                <div class="p-5  bg-gray-900 border rounded shadow-sm">
                                     <div class="flex items-center justify-between mb-4">
                                         <div>
                                             <Link
@@ -94,7 +94,7 @@ const Navbar = () => {
                                                 class="inline-flex items-center"
                                             >
 
-                                                <span class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
+                                                <span class="ml-2 text-xl font-bold tracking-wide uppercase">
                                                     <span className='text-orange-600'>CODE</span> STACK
                                                 </span>
                                             </Link>
@@ -121,7 +121,7 @@ const Navbar = () => {
                                                 <Link
                                                     to="/"
 
-                                                    class="font-medium tracking-wide text-gray-800 transition-colors duration-200 hover:text-teal-accent-400"
+                                                    class="font-medium tracking-wide text-white transition-colors duration-200 hover:text-teal-accent-400"
                                                 >
                                                     Courses
                                                 </Link>
@@ -130,7 +130,7 @@ const Navbar = () => {
                                                 <Link
                                                     to="/"
 
-                                                    class="font-medium tracking-wide text-gray-800 transition-colors duration-200 hover:text-teal-accent-400"
+                                                    class="font-medium tracking-wide text-white transition-colors duration-200 hover:text-teal-accent-400"
                                                 >
                                                     FAQ
                                                 </Link>
@@ -139,7 +139,7 @@ const Navbar = () => {
                                                 <Link
                                                     to="/"
 
-                                                    class="font-medium tracking-wide text-gray-800 transition-colors duration-200 hover:text-teal-accent-400"
+                                                    class="font-medium tracking-wide text-white transition-colors duration-200 hover:text-teal-accent-400"
                                                 >
                                                     Blog
                                                 </Link>
