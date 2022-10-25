@@ -1,7 +1,55 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Context/Authprovider';
 const Register = () => {
+    const [error, setError] = useState('')
+    const { creatUser, updateUserProfile, verifyEmail } = useContext(AuthContext)
+   
+    const handleSubmit = event => {
+        event.preventDefault();
+        const form = event.target;
+        console.log(form)
+        const name = form.name.value;
+        console.log(name)
+        const photoURL = form.photoURL.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(name, photoURL, email, password)
+        creatUser(email, password)
+            .then(result => {
+                const user = result.user
+                console.log(user)
+                setError('')
+                form.reset();
+                handleUpdateUserProfile(name, photoURL);
+                handleEmailVerification()
+               
+               
+            })
+            .catch(error => {
+                console.error(error)
+                setError(error.message)
+            })
+    }
+
+   const handleUpdateUserProfile = (name, photoURL) =>{
+               const profile = {
+                displayName: name,
+                photoURL: photoURL
+               }
+               updateUserProfile(profile)
+               .then(()=>{})
+               .catch(error =>console.error(error))
+   }
+     
+   
+
+    const handleEmailVerification = () =>{
+        verifyEmail()
+        .then(()=>{})
+        .catch(error => console.error(error))
+    }
     return (
         <div className="overflow-hidden bg-gray-900">
             <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
@@ -9,11 +57,11 @@ const Register = () => {
                     <div className="w-full max-w-xl mb-12 xl:pr-16 xl:mb-0 xl:w-7/12">
                         <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
                             Progamming improves logical <br className="hidden md:block" />
-                            thinking and is easy to verify your {' '}
+                            thinking and easy to verify your {' '}
                             <span className="text-teal-accent-400">logic <span className='text-orange-600'>quickly</span></span>
                         </h2>
                         <p className="max-w-xl mb-4 text-base text-gray-400 md:text-lg">
-                           So it is fun and interactive.Start Slowly but Maintain a Habit
+                           So it is fun and interactive.Start Slowly but Maintain a Habit.
                         </p>
 
                     </div>
@@ -45,7 +93,7 @@ const Register = () => {
                                 <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
                                     Please Register
                                 </h3>
-                                <form>
+                                <form onSubmit={handleSubmit}>
                                     <div className="mb-1 sm:mb-2">
                                         <label
                                             htmlFor="name"
@@ -64,7 +112,7 @@ const Register = () => {
                                     </div>
                                     <div className="mb-1 sm:mb-2">
                                         <label
-                                            htmlFor="Photourl"
+                                            htmlFor="PhotoURL"
                                             className="inline-block mb-1 font-medium"
                                         >
                                             Photo Url
@@ -72,10 +120,10 @@ const Register = () => {
                                         <input
                                             placeholder="please enter your photo url"
                                             required
-                                            type="photourl"
+                                            type="photoURL"
                                             className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
 
-                                            name="photourl"
+                                            name="photoURL"
                                         />
                                     </div>
                                     <div className="mb-1 sm:mb-2">
@@ -106,7 +154,6 @@ const Register = () => {
                                             required
                                             type="password"
                                             className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
-
                                             name="password"
                                         />
                                     </div>
@@ -116,6 +163,7 @@ const Register = () => {
                                     </label>
                                     <div className="mt-4 mb-2 sm:mb-4">
                                         <button
+                                        
                                             type="submit"
                                             className="inline-flex bg-gray-600 items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                                         >
@@ -139,7 +187,7 @@ const Register = () => {
 
 
                                     <p className="text-xs text-red-600 sm:text-sm">
-
+                                          {error}
                                     </p>
                                 </form>
                             </div>
