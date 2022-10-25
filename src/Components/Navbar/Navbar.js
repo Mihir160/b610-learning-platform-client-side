@@ -53,7 +53,7 @@ const Navbar = () => {
                         <li>
                             <Link
                                 to="/"
-                                class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                                class="inline-flex hidden items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                                 aria-label="Sign up"
                                 title="Sign up"
                             >
@@ -89,12 +89,12 @@ const Navbar = () => {
                                     <div class="flex items-center justify-between mb-4">
                                         <div>
                                             <Link
-                                                to="/"
+                                                to="/home"
                                                
                                                 class="inline-flex items-center"
                                             >
 
-                                                <span class="ml-2 text-xl font-bold tracking-wide uppercase">
+                                                <span class="ml-2 text-xl font-bold tracking-wide text-white uppercase">
                                                     <span className='text-orange-600'>CODE</span> STACK
                                                 </span>
                                             </Link>
@@ -119,7 +119,7 @@ const Navbar = () => {
                                         <ul class="space-y-4">
                                             <li>
                                                 <Link
-                                                    to="/"
+                                                    to="/courses"
 
                                                     class="font-medium tracking-wide text-white transition-colors duration-200 hover:text-teal-accent-400"
                                                 >
