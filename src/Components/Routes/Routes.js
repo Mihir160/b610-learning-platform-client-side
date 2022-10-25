@@ -5,6 +5,7 @@ import Header from "../Header/Header";
 import Home from "../Home/Home";
 import Login from "../Login/Login";
 import Navbar from "../Navbar/Navbar";
+import Register from "../Register/Register";
 
 export const routes = createBrowserRouter([
     {
@@ -19,6 +20,10 @@ export const routes = createBrowserRouter([
             {
                 path:'/login',
                 element:<Login></Login>
+            },
+            {
+                path:'/register',
+                element:<Register></Register>
             }
             
         ]
