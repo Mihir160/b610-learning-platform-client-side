@@ -14,10 +14,12 @@ const Login = () => {
     const location = useLocation()
 
     const googlProvider = new GoogleAuthProvider()
+    const githubProvider = new GithubAuthProvider()
     const from = location.state?.from?.pathname || '/';
     console.log(from)
 
      const {providerLogin} = useContext(AuthContext)
+
       const handleGoogleSignIn = () =>{
           providerLogin(googlProvider)
           .then(result =>{
@@ -28,7 +30,15 @@ const Login = () => {
           .catch(error => console.error(error))
       }
 
-
+     const handleGithubSignIn = () =>{
+        providerLogin(githubProvider)
+        .then(result =>{
+            const user = result.user
+            console.log(user)
+            navigate(from, {replace: true})
+          })
+          .catch(error => console.error(error))
+     }
 
 
     const handleSubmit = event => {
@@ -155,7 +165,7 @@ const Login = () => {
                                         <FaGoogle></FaGoogle>   Google
                                     </button>
                                     <button
-                                 
+                                        onClick={handleGithubSignIn}
                                         type="submit"
                                         className="btn btn-outline gap-4 "
                                     > 

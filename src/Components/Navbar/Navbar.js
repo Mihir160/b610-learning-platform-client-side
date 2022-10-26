@@ -72,7 +72,7 @@ const Navbar = () => {
 
 
                             {
-                                user?.email ?
+                                user?.uid ?
                                     <>
                                         <div className='flex items-center'>
                                             <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>

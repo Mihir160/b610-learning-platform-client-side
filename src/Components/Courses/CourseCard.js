@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
-
+import { Link} from 'react-router-dom';
+import { FaBeer, FaStar } from 'react-icons/fa';
 const CourseCard = ({ course }) => {
-    // console.log(course)
+   
     const { title, image_url, description } = course
     return (
         <div className="m-8">
@@ -25,6 +25,7 @@ const CourseCard = ({ course }) => {
                     <div className='flex justify-around'>
                         <h5 className="mb-3 font-bold">
                             {title}
+                           
                         </h5>
                        
 

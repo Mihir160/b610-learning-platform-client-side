@@ -7,7 +7,7 @@ const ParticulaCourseDeatails = () => {
     const detail = useLoaderData()
     const ref = React.createRef();
     const courseDetails = detail.details
-    console.log(courseDetails)
+  
     const { title, image_url, description, courseName_id } = detail;
     return (
         <div className="m-8 grid lg:grid-cols-1 justify-items-center">
