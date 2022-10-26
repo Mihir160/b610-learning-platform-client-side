@@ -40,12 +40,12 @@ const CourseCard = ({ course }) => {
                  
                 </div>
                 <div className='mb-2 flex justify-end flex-col'>
-                        <button
+                       <Link to={`/course/${course.courseName_id}`}> <button
                             type="submit"
                             className='p-2  bg-gray-900 text-white rounded-lg '
                         >
                             See Details
-                        </button>
+                        </button></Link>
                  </div>
             </div>
         </div>

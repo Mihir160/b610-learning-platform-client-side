@@ -10,11 +10,11 @@ const ParticulaCourseDeatails = () => {
     const { title, image_url, description } = detail;
     return (
         <div className="m-8 grid lg:grid-cols-1 justify-items-center">
-            <div className=" lg:w-1/2  glass">
+            <div className="lg:w-1/2">
 
                 <div className="card-body">
-                    <div className='flex items-center'>
-                        <h2 className="card-title text-4xl">{title}</h2>
+                    <div className='flex items-center justify-between'>
+                        <h2 className="card-title lg:text-4xl">{title}</h2>
                         <label>
                             <FaFilePdf className='h-12 w-12'></FaFilePdf>
                         </label>
