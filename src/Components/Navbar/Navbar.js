@@ -41,11 +41,11 @@ const Navbar = () => {
                         </li>
                         <li>
                             <Link
-                                to="/"
+                                to="/faqs"
 
                                 class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
                             >
-                                FAQ
+                                FAQs
                             </Link>
                         </li>
                         <li>
@@ -166,7 +166,7 @@ const Navbar = () => {
                                             </li>
                                             <li>
                                                 <Link
-                                                    to="/"
+                                                    to="/faqs"
 
                                                     class="font-medium tracking-wide text-white transition-colors duration-200 hover:text-teal-accent-400"
                                                 >

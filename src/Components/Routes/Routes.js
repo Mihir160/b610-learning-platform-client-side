@@ -6,6 +6,7 @@ import Courses from "../Courses/Courses";
 import ParticulaCourseDeatails from "../Courses/ParticulaCourseDeatails";
 
 import Errorpage from "../Errorpage/Errorpage";
+import FAQs from "../FAQs/FAQs";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import Home from "../Home/Home";
@@ -51,6 +52,10 @@ export const routes = createBrowserRouter([
             {
                 path:'/blog',
                 element:<Blog></Blog>
+            },
+            {
+                path:'/faqs',
+                element:<FAQs></FAQs>
             }
             
         ]
