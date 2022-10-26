@@ -49,7 +49,7 @@ const Navbar = () => {
                         </li>
                         <li>
                             <Link
-                                to="/"
+                                to="/blog"
 
                                 class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
                             >
@@ -174,7 +174,7 @@ const Navbar = () => {
                                             </li>
                                             <li>
                                                 <Link
-                                                    to="/"
+                                                    to="/blog"
 
                                                     class="font-medium tracking-wide text-white transition-colors duration-200 hover:text-teal-accent-400"
                                                 >
