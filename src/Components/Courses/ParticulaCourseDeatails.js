@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import DetailCourse from './DetailCourse';
 import { FaFilePdf } from 'react-icons/fa';
 const ParticulaCourseDeatails = () => {
@@ -7,7 +7,7 @@ const ParticulaCourseDeatails = () => {
     console.log(detail)
     const courseDetails = detail.details
     console.log(courseDetails)
-    const { title, image_url, description } = detail;
+    const { title, image_url, description,courseName_id } = detail;
     return (
         <div className="m-8 grid lg:grid-cols-1 justify-items-center">
             <div className="lg:w-1/2">
@@ -27,9 +27,9 @@ const ParticulaCourseDeatails = () => {
                             courseDetails.map(detail => <DetailCourse key={detail.id} detail={detail}></DetailCourse>)
                         }
                     </div>
-                    <button className='bg-gray-800 text-white p-2 rounded-lg'>
+                   <Link to={`/checkout/${courseName_id}`}> <button className='bg-gray-800 text-white p-2 rounded-lg'>
                            Get premium access
-                    </button>
+                    </button></Link>
 
                 </div>
             </div>

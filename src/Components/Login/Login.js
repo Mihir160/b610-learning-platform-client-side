@@ -1,15 +1,21 @@
 import { GoogleAuthProvider ,GithubAuthProvider} from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { FaGithub, FaGoogle } from "react-icons/fa";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Context/Authprovider';
 
 const Login = () => {
 
     const [error, setError] = useState('')
     const { signIn} = useContext(AuthContext)
-    const navigate = useNavigate('/')
+   
+    const navigate = useNavigate()
+
+    const location = useLocation()
+
     const googlProvider = new GoogleAuthProvider()
+    const from = location.state?.from?.pathname || '/';
+    console.log(from)
 
      const {providerLogin} = useContext(AuthContext)
       const handleGoogleSignIn = () =>{
@@ -17,6 +23,7 @@ const Login = () => {
           .then(result =>{
             const user = result.user
             console.log(user)
+            navigate(from, {replace: true})
           })
           .catch(error => console.error(error))
       }
@@ -25,19 +32,20 @@ const Login = () => {
 
 
     const handleSubmit = event => {
+
         event.preventDefault()
         const form = event.target;
         const email = form.email.value;
  
         const password = form.password.value;
-        console.log(email, password)
+       
         signIn(email, password)
             .then(result => {
                 const user = result.user
 
-                console.log(user)
+              
                 form.reset()
-                navigate('/')
+                navigate(from, {replace: true})
                 setError('') 
             })
             .catch(error => {
