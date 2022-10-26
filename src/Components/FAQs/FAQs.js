@@ -30,8 +30,8 @@ const Item = ({ title, children }) => {
                 </div>
             </button>
             {isOpen && (
-                <div className="p-4 pt-0">
-                    <p className="text-gray-700">{children}</p>
+                <div className="p-4 pt-0 bg-gray-800">
+                    <p className="text-white">{children}</p>
                 </div>
             )}
         </div>
@@ -40,20 +40,31 @@ const Item = ({ title, children }) => {
 
 const FAQs = () => {
     return (
-        <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+        <div class="px-4 py-16 mx-auto  sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
             <div class="max-w-xl sm:mx-auto lg:max-w-2xl ">
 
                 <div class="space-y-4 ">
-                    <Item title=" Code-Stack courses Online or Offline?">
-                        Code-Stack is a 100% e-Learning platform and we only provide online courses. We have provide offline / onsite courses and we do not have any plan in near future to provide such course.
-                    </Item>
-                    <Item title="Do you provide video recording of live classes?">
-                        Yes, we provide recording with some conditions. A student needs to regularly attend classes and exams. In case of any emergency problem, student needs to inform course instructor immediately and
-                        give proper explanation for his/her absence.
-                    </Item>
-                    <Item title="How is the qualification of teachers?">
-                        You can be absolutely sure. Our teachers are fully qualified.
-                    </Item>
+                    <div className='bg-gray-800 shadow-2xl text-white rounded-xl'>
+                        <Item title=" Code-Stack courses Online or Offline?">
+                            Code-Stack is a 100% e-Learning platform and we only provide online courses. We have provide offline / onsite courses and we do not have any plan in near future to provide such course.
+                        </Item>
+                    </div>
+                    <div className='bg-gray-800 shadow-2xl text-white rounded-lg'>
+                        <Item title="Do you provide video recording of live classes?">
+                            Yes, we provide recording with some conditions. A student needs to regularly attend classes and exams. In case of any emergency problem, student needs to inform course instructor immediately and
+                            give proper explanation for his/her absence.
+                        </Item>
+                    </div>
+                    <div className='bg-gray-800 shadow-2xl text-white rounded-lg'>
+                        <Item title="How is the qualification of teachers?">
+                            You can be absolutely sure. Our teachers are fully qualified.
+                        </Item>
+                    </div>
+                    <div className='bg-gray-800 shadow-2xl text-white rounded-lg'>
+                        <Item title="Do you provide certificates after completing a course?">
+                            yes
+                        </Item>
+                    </div>
 
                 </div>
             </div>
