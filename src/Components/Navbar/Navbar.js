@@ -23,11 +23,12 @@ const Navbar = () => {
         <div class="bg-gray-900">
             <div class="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
                 <div class="relative flex items-center justify-between">
+                    
                     <Link
                         to=""
 
                         class="inline-flex items-center"
-                    >
+                    >   <img className='h-12 h-8 rounded-lg' src='https://cdn.dribbble.com/users/62253/screenshots/2359883/media/f40cc1f4910fa9262145b810a36a1bc1.jpg?compress=1&resize=400x300'/>
                         <span class="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
                             <span className='text-orange-600'>CODE</span> STACK
                         </span>
