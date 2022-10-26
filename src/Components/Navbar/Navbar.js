@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Context/Authprovider';
-import { FaUser } from 'react-icons/fa';
+
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { user, logOut } = useContext(AuthContext)
@@ -63,11 +63,15 @@ const Navbar = () => {
 
 
                             {
-                                user?.uid ?
+                                user?.email?
                                     <>
-
-                                        <img className='h-7 rounded-lg'  src={user?.photoURL} />
-                                        <button className='btn' onClick={handleLogOut}>Log Out</button>
+                                        <div className='flex items-center'>
+                                            <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
+                                            <img className='h-7 mx-4 tooltip   rounded-lg'  src={user?.photoURL} />
+                                            </div>
+                                            
+                                            <button className='p-1 rounded-lg text-white bg-gray-600' onClick={handleLogOut}>Log Out</button>
+                                        </div>
                                     </>
                                     :
                                     <>

@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import Courses from "../Courses/Courses";
 import Errorpage from "../Errorpage/Errorpage";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
@@ -17,6 +18,7 @@ export const routes = createBrowserRouter([
              path:'/',
              element:<Header></Header>
             },
+         
             {
                 path:'/login',
                 element:<Login></Login>
@@ -24,7 +26,11 @@ export const routes = createBrowserRouter([
             {
                 path:'/register',
                 element:<Register></Register>
-            }
+            },
+            {
+                path:'/courses',
+                element:<Courses></Courses>
+              },
             
         ]
        

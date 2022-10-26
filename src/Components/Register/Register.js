@@ -1,17 +1,17 @@
+import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Context/Authprovider';
 const Register = () => {
     const [error, setError] = useState('')
-    const { creatUser, updateUserProfile, verifyEmail } = useContext(AuthContext)
-   
+    const { creatUser, updateUserProfile } = useContext(AuthContext)
+
+
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;
-        console.log(form)
         const name = form.name.value;
-        console.log(name)
         const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
@@ -22,34 +22,27 @@ const Register = () => {
                 console.log(user)
                 setError('')
                 form.reset();
-                handleUpdateUserProfile(name, photoURL);
-                handleEmailVerification()
-               
-               
+                handleUpdateUserProfile(name, photoURL)
+
             })
             .catch(error => {
                 console.error(error)
                 setError(error.message)
+                form.reset()
             })
     }
 
-   const handleUpdateUserProfile = (name, photoURL) =>{
-               const profile = {
-                displayName: name,
-                photoURL: photoURL
-               }
-               updateUserProfile(profile)
-               .then(()=>{})
-               .catch(error =>console.error(error))
-   }
-     
-   
 
-    const handleEmailVerification = () =>{
-        verifyEmail()
-        .then(()=>{})
-        .catch(error => console.error(error))
+    const handleUpdateUserProfile = (name, photoURL) => {
+        const profile = {
+            displayName: name,
+            photoURL: photoURL
+        }
+        updateUserProfile(profile)
+            .then(() => { })
+            .catch(error => console.error(error))
     }
+
     return (
         <div className="overflow-hidden bg-gray-900">
             <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
@@ -61,7 +54,7 @@ const Register = () => {
                             <span className="text-teal-accent-400">logic <span className='text-orange-600'>quickly</span></span>
                         </h2>
                         <p className="max-w-xl mb-4 text-base text-gray-400 md:text-lg">
-                           So it is fun and interactive.Start Slowly but Maintain a Habit.
+                            So it is fun and interactive.Start Slowly but Maintain a Habit.
                         </p>
 
                     </div>
@@ -163,15 +156,23 @@ const Register = () => {
                                     </label>
                                     <div className="mt-4 mb-2 sm:mb-4">
                                         <button
-                                        
+
                                             type="submit"
                                             className="inline-flex bg-gray-600 items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                                         >
                                             Register
                                         </button>
                                     </div>
-                                    <div className="mt-4 mb-2 sm:mb-4 flex justify-evenly">
+
+
+
+                                    <p className="text-xs text-red-600 sm:text-sm">
+                                        {error}
+                                    </p>
+                                </form>
+                                {/* <div className="mt-4 mb-2 sm:mb-4 flex justify-evenly">
                                         <button
+                                           onClick={handleGoogleSignIn}
                                             type="submit"
                                             className=" btn btn-outline gap-4 "
                                         >
@@ -183,13 +184,7 @@ const Register = () => {
                                         >
                                             <FaGithub></FaGithub>   Github
                                         </button>
-                                    </div>
-
-
-                                    <p className="text-xs text-red-600 sm:text-sm">
-                                          {error}
-                                    </p>
-                                </form>
+                                    </div> */}
                             </div>
                         </div>
                     </div>

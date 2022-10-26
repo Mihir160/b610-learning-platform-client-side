@@ -1,9 +1,51 @@
-import React from 'react';
-import {  FaGithub,FaGoogle } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { GoogleAuthProvider ,GithubAuthProvider} from 'firebase/auth';
+import React, { useContext, useState } from 'react';
+import { FaGithub, FaGoogle } from "react-icons/fa";
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../Context/Authprovider';
 
 const Login = () => {
-   
+
+    const [error, setError] = useState('')
+    const { signIn} = useContext(AuthContext)
+    const navigate = useNavigate('/')
+    const googlProvider = new GoogleAuthProvider()
+
+     const {providerLogin} = useContext(AuthContext)
+      const handleGoogleSignIn = () =>{
+          providerLogin(googlProvider)
+          .then(result =>{
+            const user = result.user
+            console.log(user)
+          })
+          .catch(error => console.error(error))
+      }
+
+
+
+
+    const handleSubmit = event => {
+        event.preventDefault()
+        const form = event.target;
+        const email = form.email.value;
+ 
+        const password = form.password.value;
+        console.log(email, password)
+        signIn(email, password)
+            .then(result => {
+                const user = result.user
+
+                console.log(user)
+                form.reset()
+                navigate('/')
+                setError('') 
+            })
+            .catch(error => {
+                setError(error.message)
+                console.error(error)
+            })
+        
+    }
     return (
         <div className="overflow-hidden bg-gray-900">
             <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
@@ -15,9 +57,9 @@ const Login = () => {
                             <span className="text-teal-accent-400">cse <span className='text-orange-600'>programming</span></span>
                         </h2>
                         <p className="max-w-xl mb-4 text-base text-gray-400 md:text-lg">
-                        Computer programming is the process of performing a particular computation usually by designing and building an executable computer program.
+                            Computer programming is the process of performing a particular computation usually by designing and building an executable computer program.
                         </p>
-                        
+
                     </div>
                     <div className="w-full max-w-xl xl:px-8 xl:w-5/12">
                         <div className="relative">
@@ -47,7 +89,7 @@ const Login = () => {
                                 <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
                                     Please Login
                                 </h3>
-                                <form>
+                                <form onSubmit={handleSubmit}>
                                     <div className="mb-1 sm:mb-2">
                                         <label
                                             htmlFor="email"
@@ -60,7 +102,7 @@ const Login = () => {
                                             required
                                             type="email"
                                             className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
-                                            id="email"
+
                                             name="email"
                                         />
                                     </div>
@@ -76,7 +118,7 @@ const Login = () => {
                                             required
                                             type="password"
                                             className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
-                                            id="email"
+
                                             name="password"
                                         />
                                     </div>
@@ -92,26 +134,26 @@ const Login = () => {
                                             Login
                                         </button>
                                     </div>
-                                    <div className="mt-4 mb-2 sm:mb-4 flex justify-evenly">
-                                        <button
-                                            type="submit"
-                                            className=" btn btn-outline gap-4 "
-                                        >
-                                         <FaGoogle></FaGoogle>   Google
-                                        </button>
-                                        <button
-                                            type="submit"
-                                            className="btn btn-outline gap-4 "
-                                        >
-                                         <FaGithub></FaGithub>   Github 
-                                        </button>
-                                    </div>
-
-
                                     <p className="text-xs text-red-600 sm:text-sm">
-                                        
+                                        {error}
                                     </p>
                                 </form>
+                                <div className="mt-4 mb-2 sm:mb-4 flex justify-evenly">
+                                    <button
+                                        onClick={handleGoogleSignIn}
+                                        type="submit"
+                                        className=" btn btn-outline gap-4 "
+                                    >
+                                        <FaGoogle></FaGoogle>   Google
+                                    </button>
+                                    <button
+                                 
+                                        type="submit"
+                                        className="btn btn-outline gap-4 "
+                                    > 
+                                        <FaGithub></FaGithub>   Github
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
