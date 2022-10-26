@@ -9,12 +9,12 @@ console.log(courses)
 
     return (
         <div className='grid lg:grid-cols-2'>
-            <div className='m-8 lg:p-8 lg:h-1/2 lg:rounded-lg lg:shadow-lg w-1/2 lg:bg-gray-800'>
+            <div className='m-8 lg:p-8 lg:h-2/4 lg:rounded-lg lg:shadow-lg w-1/2 lg:bg-gray-800'>
                 <h1 className='text-5xl font-bold lg:text-white'>Courses</h1>
                 {
-                    courses.map(course => <p key={course._id} className="link lg:text-white text-3xl p-4">
+                    courses.map(course => <p key={course._id} className="link lg:text-white text-xl p-4">
 
-                        <Link to={`/course/${course.courseName_id}`}>{course.course_name}</Link>
+                        <Link to={`/course/${course.courseName_id}`}>{course.title}</Link>
 
                     </p>)
                 }

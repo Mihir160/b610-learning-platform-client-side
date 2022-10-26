@@ -3,8 +3,15 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../Context/Authprovider';
 
 const Navbar = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { user, logOut } = useContext(AuthContext)
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [dark, setDark] = useState(false)
+
+    const handledarkMood = event => {
+        setDark(event.target.checked)
+
+    }
+
     const handleLogOut = () => {
         logOut()
             .then(() => {
@@ -50,12 +57,14 @@ const Navbar = () => {
                             </Link>
                         </li>
                         <li>
-                            <div className="form-control">
-                                <label className="label cursor-pointer">
 
-                                    <input type="checkbox" className="toggle" />
-                                </label>
+                            <div className='flex'>
+                                <input onClick={handledarkMood} type="checkbox" className="toggle" />
+                                {
+                                    !dark ? <p className='text-white mx-1'>light</p> : <p className='text-white mx-1'>Dark</p>
+                                }
                             </div>
+
                         </li>
                     </ul>
                     <ul class="flex hidden items-center  space-x-8 lg:flex">
@@ -63,13 +72,13 @@ const Navbar = () => {
 
 
                             {
-                                user?.email?
+                                user?.email ?
                                     <>
                                         <div className='flex items-center'>
                                             <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
-                                            <img className='h-7 mx-4 tooltip   rounded-lg'  src={user?.photoURL} />
+                                                <img className='h-7 mx-4 tooltip   rounded-lg' src={user?.photoURL} />
                                             </div>
-                                            
+
                                             <button className='p-1 rounded-lg text-white bg-gray-600' onClick={handleLogOut}>Log Out</button>
                                         </div>
                                     </>
@@ -182,11 +191,11 @@ const Navbar = () => {
                                                 </Link>
                                             </li>
                                             <li>
-                                                <div className="form-control ">
-                                                    <label className="label">
-
-                                                        <input type="checkbox" className="toggle cursor-pointer" />
-                                                    </label>
+                                                <div className='flex'>
+                                                    <input onClick={handledarkMood} type="checkbox" className="toggle" />
+                                                    {
+                                                        !dark ? <p className='text-white mx-1'>light</p> : <p className='text-white mx-1'>Dark</p>
+                                                    }
                                                 </div>
                                             </li>
                                         </ul>
