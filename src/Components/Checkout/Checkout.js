@@ -12,10 +12,11 @@ const Checkout = () => {
             </div>
             <div className="text-center mt-28 lg:h-56  h-72 w-full p-4 shadow-2xl rounded-lg  bg-gray-800 ">
             
-                    <h1 className='text-3xl font-bold text-orange-800'>Check Out</h1>
+                    <h1 className='text-3xl font-bold text-orange-500'>Check Out</h1>
                     <h2 className='text-2xl text-white font-bold'>{title}</h2>
                     <p className='text-xl text-white font-bold'>Price: <span className='text-orange-500'>{price}</span> </p>
-                    <p className='text-xl  text-white font-bold'>Rating: <span className='text-orange-500'>{rating}</span> </p>
+                    <p className='text-xl  text-white font-bold '>Rating: <span className='text-orange-500'>{rating}</span> </p>
+                    <button className='bg-orange-500 p-2 text-1xl rounded-lg mt-2 text-white'>Enroll</button>
              
             </div>
             <div>
