@@ -6,12 +6,12 @@ const Navbar = () => {
     const { user, logOut } = useContext(AuthContext)
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [dark, setDark] = useState(false)
-
+// dark mode function
     const handledarkMood = event => {
         setDark(event.target.checked)
 
     }
-
+// logout function
     const handleLogOut = () => {
         logOut()
             .then(() => {
@@ -58,7 +58,7 @@ const Navbar = () => {
                             </Link>
                         </li>
                         <li>
-
+                            {/* dark and light text show mode */}
                             <div className='flex'>
                                 <input onClick={handledarkMood} type="checkbox" className="toggle" />
                                 {
@@ -71,9 +71,9 @@ const Navbar = () => {
                     <ul class="flex hidden items-center  space-x-8 lg:flex">
                         <li>
 
-
+                            {/* user photo and name tooltip */}
                             {
-                                user?.uid ?
+                                user?.uid?
                                     <>
                                         <div className='flex items-center'>
                                             <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
@@ -192,6 +192,7 @@ const Navbar = () => {
                                                 </Link>
                                             </li>
                                             <li>
+                                               {/* dark and light text show mode */}
                                                 <div className='flex'>
                                                     <input onClick={handledarkMood} type="checkbox" className="toggle" />
                                                     {

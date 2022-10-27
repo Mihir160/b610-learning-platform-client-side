@@ -4,6 +4,7 @@ const DetailCourse = ({detail}) => {
     console.log(detail)
     const {title,topic,topic1,topic2,topic3 } = detail
     return (
+        //course details
         <div>
             <h2 className='font-bold'>{title}</h2>
             <li>{topic}</li>

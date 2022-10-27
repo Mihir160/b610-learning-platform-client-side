@@ -16,10 +16,10 @@ const Login = () => {
     const googlProvider = new GoogleAuthProvider()
     const githubProvider = new GithubAuthProvider()
     const from = location.state?.from?.pathname || '/';
-    console.log(from)
+    
 
      const {providerLogin} = useContext(AuthContext)
-
+      //google login system
       const handleGoogleSignIn = () =>{
           providerLogin(googlProvider)
           .then(result =>{
@@ -29,7 +29,7 @@ const Login = () => {
           })
           .catch(error => console.error(error))
       }
-
+     //github login system
      const handleGithubSignIn = () =>{
         providerLogin(githubProvider)
         .then(result =>{
@@ -40,7 +40,7 @@ const Login = () => {
           .catch(error => console.error(error))
      }
 
-
+    //user login sumbit email and password 
     const handleSubmit = event => {
 
         event.preventDefault()
@@ -52,8 +52,6 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 const user = result.user
-
-              
                 form.reset()
                 navigate(from, {replace: true})
                 setError('') 

@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link} from 'react-router-dom';
-import { FaBeer, FaStar } from 'react-icons/fa';
+
 const CourseCard = ({ course }) => {
    
+    
     const { title, image_url, description } = course
     return (
-        <div className="m-8">
-            <div className="flex flex-col  h-1/2 w-full overflow-hidden bg-white border rounded shadow-sm lg:flex-row sm:mx-auto">
+        <div className="m-8 ">
+            <div className="flex flex-col  h-1/2 w-full overflow-hidden bg-white border rounded shadow-2xl lg:flex-row sm:mx-auto">
                 <div className="relative lg:w-1/2">
                     <img
                         src={image_url}

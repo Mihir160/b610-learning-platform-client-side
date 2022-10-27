@@ -7,7 +7,7 @@ const Register = () => {
     const [error, setError] = useState('')
     const { creatUser, updateUserProfile } = useContext(AuthContext)
 
-
+    // email password photourl name submit
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;
@@ -32,7 +32,7 @@ const Register = () => {
             })
     }
 
-
+  //update profile
     const handleUpdateUserProfile = (name, photoURL) => {
         const profile = {
             displayName: name,
