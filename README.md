@@ -1,2 +1,2 @@
-### ***Web Site Name***
+### Web Site Name
 CODE STACK
