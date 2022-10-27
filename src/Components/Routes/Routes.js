@@ -37,17 +37,17 @@ export const routes = createBrowserRouter([
             {
                 path:'/courses',
                 element:<Courses></Courses>,
-                loader:  () => fetch ('https://b610-lerning-platform-server-side-gamma.vercel.app/courses')
+                loader:  () => fetch ('https://b610-lerning-platform-server-side-mihir160.vercel.app/courses')
             },
             {
                 path:'/course/:id',
                 element:<ParticulaCourseDeatails></ParticulaCourseDeatails>,
-                loader: ({params}) => fetch(`https://b610-lerning-platform-server-side-gamma.vercel.app/course/${params.id}`)
+                loader: ({params}) => fetch(`https://b610-lerning-platform-server-side-mihir160.vercel.app/course/${params.id}`)
             },
             {
                 path:'/checkout/:id',
                 element:<PrivateRoutes><Checkout></Checkout></PrivateRoutes>,
-                loader: ({params}) => fetch(`https://b610-lerning-platform-server-side-gamma.vercel.app/course/${params.id}`)
+                loader: ({params}) => fetch(`https://b610-lerning-platform-server-side-mihir160.vercel.app/course/${params.id}`)
             },
             {
                 path:'/blog',

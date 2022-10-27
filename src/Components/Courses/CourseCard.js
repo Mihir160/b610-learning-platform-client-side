@@ -28,9 +28,6 @@ const CourseCard = ({ course }) => {
                             {title}
                            
                         </h5>
-                       
-
-
                     </div>
                     <p className="mb-5 text-gray-800">
                         <span className="">{description.length > 250 ?
