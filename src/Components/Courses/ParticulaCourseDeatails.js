@@ -6,8 +6,13 @@ import Pdf from "react-to-pdf";
 const ParticulaCourseDeatails = () => {
     const detail = useLoaderData()
     const ref = React.createRef();
+    const options = {
+        orientation: "landscape",
+        unit: "in",
+        format: [11, 8],
+    };
     const courseDetails = detail.details
-  
+
     const { title, image_url, description, courseName_id } = detail;
     return (
         <div className="m-8 grid lg:grid-cols-1 justify-items-center">
@@ -18,14 +23,17 @@ const ParticulaCourseDeatails = () => {
                         <h2 className="card-title lg:text-4xl">{title}</h2>
                         {/* pdf download */}
                         <label>
-                            <Pdf  targetRef={ref} filename="Code-stack.pdf">
+                            <Pdf targetRef={ref} filename="Code-stack.pdf" options={options}
+                                x={0.5}
+                                y={0.5}
+                                scale={0.7}>
                                 {({ toPdf }) => <button onClick={toPdf}><FaFilePdf className='h-12 w-12'></FaFilePdf></button>}
                             </Pdf>
                         </label>
                     </div>
                     <figure><img src={image_url} alt="car!" /></figure>
                     {/* course details and pdf download start  */}
-                    <div ref={ref}>
+                    <div ref={ref} >
                         <p>{description}</p>
                         <h2 className='text-3xl font-bold'>Course Details</h2>
                         <div>
