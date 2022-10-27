@@ -4,7 +4,6 @@ import CourseCard from './CourseCard';
 
 const Courses = () => {
 const courses = useLoaderData()
-console.log(courses)
 
 
     return (

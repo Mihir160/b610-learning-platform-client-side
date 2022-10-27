@@ -3,7 +3,6 @@ import { useLoaderData } from 'react-router-dom';
 
 const Checkout = () => {
     const checkout = useLoaderData()
-    console.log(checkout)
     const { title, price, rating } = checkout
     return (
         <div className="h-screen">

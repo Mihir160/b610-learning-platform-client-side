@@ -1,7 +1,6 @@
 import React from 'react';
 
 const DetailCourse = ({detail}) => {
-    console.log(detail)
     const {title,topic,topic1,topic2,topic3 } = detail
     return (
         //course details
