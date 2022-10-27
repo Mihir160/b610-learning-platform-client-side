@@ -7,6 +7,7 @@ const Blog = () => {
             <div className="max-w-screen-xl sm:mx-auto">
                 <div className="grid grid-cols-1 gap-16 row-gap-8">
                     <div className="space-y-8">
+                        {/* question answer */}
                         <div className='bg-gray-800 p-4 rounded-lg text-white shadow-2xl'>
                             <p className="mb-4 text-xl font-medium">
                                 what is cors?

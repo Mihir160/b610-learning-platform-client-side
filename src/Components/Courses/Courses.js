@@ -8,6 +8,7 @@ const courses = useLoaderData()
 
     return (
         <div className='grid lg:grid-cols-2'>
+            
             {/* course catagory  */}
             <div className='m-8 lg:p-8  lg:h-2/4 lg:rounded-lg lg:shadow-lg w-1/2 lg:bg-gray-800'>
                 <h1 className='text-5xl font-bold lg:text-white'>Courses</h1>

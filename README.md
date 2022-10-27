@@ -22,3 +22,6 @@ Link : https://github.com/programming-hero-web-course1/b610-lerning-platform-ser
 * If we go to login page we can login.We have an any account and We can also login with google, email and password, github.
 * If there is no account then we click register If you do, it will take you to the register page and you can register.
 * After that, if you go to the blog, you will get some question answers and if you go to faqs, the questions you have about the course will be answered.
+
+### Frameworks, libraries
+* Html,Css,Javascript,Reactjs, tailwind, daisyui, reat-to-pdf,firebase,vercel.

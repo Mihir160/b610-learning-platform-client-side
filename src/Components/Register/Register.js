@@ -7,6 +7,7 @@ const Register = () => {
 
     const navigate = useNavigate()
     const location = useLocation()
+    //location path
     const from = location.state?.from?.pathname || '/';
 
     // email password photourl name submit
@@ -165,28 +166,10 @@ const Register = () => {
                                             Register
                                         </button>
                                     </div>
-
-
-
                                     <p className="text-xs text-red-600 sm:text-sm">
                                         {error}
                                     </p>
                                 </form>
-                                {/* <div className="mt-4 mb-2 sm:mb-4 flex justify-evenly">
-                                        <button
-                                           onClick={handleGoogleSignIn}
-                                            type="submit"
-                                            className=" btn btn-outline gap-4 "
-                                        >
-                                            <FaGoogle></FaGoogle>   Google
-                                        </button>
-                                        <button
-                                            type="submit"
-                                            className="btn btn-outline gap-4 "
-                                        >
-                                            <FaGithub></FaGithub>   Github
-                                        </button>
-                                    </div> */}
                             </div>
                         </div>
                     </div>

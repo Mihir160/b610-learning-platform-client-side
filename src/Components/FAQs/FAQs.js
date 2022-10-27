@@ -42,7 +42,7 @@ const FAQs = () => {
     return (
         <div class="px-4 py-16 mx-auto h-screen  sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
             <div class="max-w-xl sm:mx-auto lg:max-w-2xl ">
-
+                  {/* FAQs here  */}
                 <div class="space-y-4 ">
                     <div className='bg-gray-800 shadow-2xl text-white rounded-xl'>
                         <Item title=" Code-Stack courses Online or Offline?">

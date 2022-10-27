@@ -10,14 +10,15 @@ const Checkout = () => {
             <div>
 
             </div>
+            {/* checkout deatails */}
             <div className="text-center mt-28 lg:h-56  h-56 w-full p-4 shadow-2xl rounded-lg  bg-gray-800 ">
             
                     <h1 className='lg:text-3xl font-bold text-orange-500'>Check Out</h1>
                     <h2 className='lg:text-2xl text-white font-bold'>{title}</h2>
                     <p className='lg:text-xl text-white font-bold'>Price: <span className='text-orange-500'>{price}</span> </p>
                     <p className='lg:text-xl  text-white font-bold '>Rating: <span className='text-orange-500'>{rating}</span> </p>
-                    <button className='bg-orange-500 p-2 lg:text-1xl rounded-lg mt-2 text-white'>Enroll</button>
-             
+                    
+        
             </div>
             <div>
 

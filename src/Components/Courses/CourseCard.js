@@ -3,7 +3,7 @@ import { Link} from 'react-router-dom';
 
 const CourseCard = ({ course }) => {
    
-    
+    // courses card
     const { title, image_url, description,rating, duration } = course
     return (
         <div className="m-8 ">
@@ -42,6 +42,7 @@ const CourseCard = ({ course }) => {
                  
                 </div>
                 <div className='mb-2 flex justify-end flex-col'>
+                    {/* see detail dynamic link */}
                        <Link to={`/course/${course.courseName_id}`}> <button
                             type="submit"
                             className='h-8 w-20 bg-gray-900 text-white rounded-lg '

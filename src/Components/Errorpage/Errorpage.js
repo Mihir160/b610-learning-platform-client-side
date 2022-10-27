@@ -3,6 +3,7 @@ import { useRouteError } from 'react-router-dom';
 
 const Errorpage = () => {
     const error = useRouteError()
+    // error page show
     return (
         <div className='flex flex-col bg-gray-900 min-h-[700px] justify-center items-center'>
         <h1 className='text-4xl text-white'>Ops! An Error Ocurred!</h1>

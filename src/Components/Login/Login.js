@@ -15,6 +15,7 @@ const Login = () => {
 
     const googlProvider = new GoogleAuthProvider()
     const githubProvider = new GithubAuthProvider()
+    //location path
     const from = location.state?.from?.pathname || '/';
     
 
@@ -152,6 +153,7 @@ const Login = () => {
                                         {error}
                                     </p>
                                 </form>
+                                {/* google and github authentication button */}
                                 <div className="mt-4 mb-2 sm:mb-4 flex justify-evenly">
                                     <button
                                         onClick={handleGoogleSignIn}
