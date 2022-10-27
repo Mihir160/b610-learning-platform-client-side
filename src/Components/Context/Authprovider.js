@@ -27,12 +27,12 @@ const Authprovider = ({children}) => {
 
     //  user logout
      const logOut = () =>{
-      setLoading(true)
+        setLoading(true)
         return signOut(auth)
      }
      //create user
      const creatUser = (email, password) =>{
-      setLoading(true)
+        setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
      }
      //sign in user
