@@ -3,7 +3,7 @@ CODE STACK
 ### Web site Link
 Live Link : https://code-stack-1a5a8.web.app/
 
-### Server sit Github Link
+### Server site Github Link
 Link : https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-Mihir160
 ### Features 
 * Home Page 
