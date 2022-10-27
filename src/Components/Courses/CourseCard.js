@@ -44,7 +44,7 @@ const CourseCard = ({ course }) => {
                 <div className='mb-2 flex justify-end flex-col'>
                        <Link to={`/course/${course.courseName_id}`}> <button
                             type="submit"
-                            className='p-2  bg-gray-900 text-white rounded-lg '
+                            className='btn  bg-gray-900 text-white rounded-lg '
                         >
                             See Details
                         </button></Link>
