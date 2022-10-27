@@ -6,12 +6,12 @@ const Navbar = () => {
     const { user, logOut } = useContext(AuthContext)
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [dark, setDark] = useState(false)
-// dark mode function
+    // dark mode function
     const handledarkMood = event => {
         setDark(event.target.checked)
 
     }
-// logout function
+    // logout function
     const handleLogOut = () => {
         logOut()
             .then(() => {
@@ -23,12 +23,12 @@ const Navbar = () => {
         <div class="bg-gray-900">
             <div class="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
                 <div class="relative flex items-center justify-between">
-                    
+
                     <Link
                         to=""
 
                         class="inline-flex items-center"
-                    >   <img className='h-12 h-8 rounded-lg' src='https://cdn.dribbble.com/users/62253/screenshots/2359883/media/f40cc1f4910fa9262145b810a36a1bc1.jpg?compress=1&resize=400x300'/>
+                    >   <img className='h-12 h-8 rounded-lg' src='https://cdn.dribbble.com/users/62253/screenshots/2359883/media/f40cc1f4910fa9262145b810a36a1bc1.jpg?compress=1&resize=400x300' />
                         <span class="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
                             <span className='text-orange-600'>CODE</span> STACK
                         </span>
@@ -73,7 +73,7 @@ const Navbar = () => {
 
                             {/* user photo and name tooltip */}
                             {
-                                user?.uid?
+                                user?.uid ?
                                     <>
                                         <div className='flex items-center'>
                                             <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
@@ -184,15 +184,36 @@ const Navbar = () => {
                                             </li>
 
                                             <li>
-                                                <Link
-                                                    to="/login"
-                                                    class="inline-flex items-center justify-center bg-slate-800  h-10 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline outline-none"
-                                                >
-                                                    Login
-                                                </Link>
+
+                                                {/* user photo and name tooltip */}
+                                                {
+                                                    user?.uid ?
+                                                        <>
+                                                            <div className='flex items-center'>
+                                                                <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
+                                                                    <img className='h-7 mx-4 tooltip   rounded-lg' src={user?.photoURL} />
+                                                                </div>
+
+                                                                <button className='p-1 rounded-lg text-white bg-gray-600' onClick={handleLogOut}>Log Out</button>
+                                                            </div>
+                                                        </>
+                                                        :
+                                                        <>
+                                                            <Link
+                                                                to="/login"
+                                                                class="inline-flex  items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                                                                aria-label="Sign up"
+                                                                title="Sign up"
+                                                            >
+                                                                Login
+                                                            </Link>
+
+                                                        </>
+                                                }
+
                                             </li>
                                             <li>
-                                               {/* dark and light text show mode */}
+                                                {/* dark and light text show mode */}
                                                 <div className='flex'>
                                                     <input onClick={handledarkMood} type="checkbox" className="toggle" />
                                                     {
