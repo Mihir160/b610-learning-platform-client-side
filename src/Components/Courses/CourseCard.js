@@ -4,7 +4,7 @@ import { Link} from 'react-router-dom';
 const CourseCard = ({ course }) => {
    
     
-    const { title, image_url, description } = course
+    const { title, image_url, description,rating, duration } = course
     return (
         <div className="m-8 ">
             <div className="flex flex-col  h-1/2 w-full overflow-hidden bg-white border rounded shadow-2xl lg:flex-row sm:mx-auto">
@@ -26,7 +26,6 @@ const CourseCard = ({ course }) => {
                     <div className='flex justify-around'>
                         <h5 className="mb-3 font-bold">
                             {title}
-                           
                         </h5>
                     </div>
                     <p className="mb-5 text-gray-800">
@@ -36,6 +35,10 @@ const CourseCard = ({ course }) => {
                         }
                         </span>
                     </p>
+                    <div>
+                        <p className='text-1xl font-bold'>Rating: <span className='text-orange-600'>{rating}</span></p>
+                        <p className='text-1xl font-bold'>Duration: <span className='text-orange-600'>{duration}</span></p>
+                    </div>
                  
                 </div>
                 <div className='mb-2 flex justify-end flex-col'>
