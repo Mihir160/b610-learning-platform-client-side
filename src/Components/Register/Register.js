@@ -1,15 +1,14 @@
-import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
-import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Context/Authprovider';
 const Register = () => {
     const [error, setError] = useState('')
     const { creatUser, updateUserProfile } = useContext(AuthContext)
-    const navigate = useNavigate()
 
+    const navigate = useNavigate()
     const location = useLocation()
     const from = location.state?.from?.pathname || '/';
+
     // email password photourl name submit
     const handleSubmit = event => {
         event.preventDefault();
@@ -22,14 +21,11 @@ const Register = () => {
         creatUser(email, password)
             .then(result => {
                 const user = result.user
-                
                 setError('')
                 form.reset();
                 handleUpdateUserProfile(name, photoURL)
                 navigate(from, {replace: true})
                 window.location.reload();
-                
-
             })
             .catch(error => {
                 console.error(error)
