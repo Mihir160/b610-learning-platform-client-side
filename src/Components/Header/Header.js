@@ -1,4 +1,6 @@
 import React from 'react';
+import Member from '../Member/Member';
+import WhyCodeStack from '../WhyCodeStack/WhyCodeStack';
 
 const Header = () => {
     return (
@@ -39,6 +41,9 @@ const Header = () => {
                     </div>
                 </div>
             </div>
+
+            <WhyCodeStack></WhyCodeStack>
+            <Member></Member>
         </div>
     );
 };
